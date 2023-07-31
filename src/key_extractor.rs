@@ -75,7 +75,7 @@ impl KeyExtractor for PerPathBearerTokenKeyExtractor {
     ) -> HttpResponse {
         let wait_time = negative
             .wait_time_from(DefaultClock::default().now())
-            .as_micros();
+            .as_millis();
         response
             .content_type(ContentType::json())
             .json(&ErrorMessage {
